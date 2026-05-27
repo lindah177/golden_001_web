@@ -1,72 +1,118 @@
 {% extends "base.html" %}
 
-{% block title %}Home — Sunshine Children's Care Centre{% endblock %}
+{% block title %}Home — Golden Ark Care Centre{% endblock %}
 
 {% block content %}
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-badge"> Making a Difference Since 2010</div>
-    <h1>Every Child Deserves a <em>Bright Future</em></h1>
-    <p>We nurture, protect, and empower children in our community — providing love, education, and opportunity to those who need it most.</p>
-    <div class="hero-btns">
-      <a href="{{ url_for('public.donate') }}" class="btn-primary">💛 Donate Today</a>
-      <a href="{{ url_for('public.contact') }}" class="btn-outline">Get In Touch</a>
+  <section class="py-5 text-center text-white" style="background: linear-gradient(135deg, #2D7DD2, #0f3460);">
+    <div class="container py-4">
+      <span class="badge rounded-pill mb-3 px-3 py-2" style="background:rgba(245,166,35,0.2); color:#F5A623; border: 1px solid rgba(245,166,35,0.5);">
+        🌟 Making a Difference Since 2010
+      </span>
+      <h1 class="display-4 fw-bold mb-3">
+        Every Child Deserves a <em class="fst-normal" style="color:#F5A623;">Bright Future</em>
+      </h1>
+      <p class="lead mb-4 mx-auto text-white-75" style="max-width:560px; opacity:0.85;">
+        We nurture, protect, and empower children in our community — providing love, education, and opportunity to those who need it most.
+      </p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <a href="{{ url_for('public.donate') }}" class="btn btn-lg fw-bold px-4" style="background:#F5A623;">
+          💛 Donate Today
+        </a>
+        <a href="{{ url_for('public.contact') }}" class="btn btn-lg btn-outline-light px-4">
+          Get In Touch
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- STATS -->
-  <section class="stats">
-    <div class="stat">
-      <div class="stat-num">320+</div>
-      <div class="stat-label">Children Supported</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">14</div>
-      <div class="stat-label">Years of Service</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">R{{ "{:,.0f}".format(total_donations) }}</div>
-      <div class="stat-label">Total Donated</div>
+  <section class="py-4" style="background:#3AAA6E;">
+    <div class="container">
+      <div class="row text-center text-white g-3">
+        <div class="col-6 col-md-3">
+          <div class="fs-2 fw-bold">320+</div>
+          <div class="small opacity-75">Children Supported</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="fs-2 fw-bold">14</div>
+          <div class="small opacity-75">Years of Service</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="fs-2 fw-bold">R{{ "{:,.0f}".format(total_donations) }}</div>
+          <div class="small opacity-75">Total Donated</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="fs-2 fw-bold">48</div>
+          <div class="small opacity-75">Staff & Volunteers</div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section class="about">
-    <div class="about-inner">
-      <div class="about-img">🏡</div>
-      <div>
-        <p class="section-label">Who We Are</p>
-        <h2 class="section-title">A Safe Haven for Children in Need</h2>
-        <p>Sunshine Children's Care Centre has been a beacon of hope since 2010. We provide a nurturing home, quality education, and emotional support to vulnerable children.</p>
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-md-5">
+          <div class="rounded-4 d-flex align-items-center justify-content-center"
+               style="height:280px; background:linear-gradient(135deg,#FFF0D4,#FFD97A); font-size:5rem;">
+            🏡
+          </div>
+        </div>
+        <div class="col-md-7">
+          <p class="text-uppercase fw-bold small mb-1" style="color:#2D7DD2; letter-spacing:0.1em;">Who We Are</p>
+          <h2 class="fw-bold mb-3">A Safe Haven for Children in Need</h2>
+          <p class="text-secondary">
+            Golden Ark Care Centre has been a beacon of hope since 2010. We provide a nurturing home, quality education, and emotional support to vulnerable children — ensuring they grow up with dignity, love, and the tools to thrive.
+          </p>
+          <p class="text-secondary mt-3">
+            Our team of dedicated caregivers, educators, and volunteers work tirelessly to create a world where no child is left behind.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- PROGRAMS -->
-  <section class="programs">
-    <p class="section-label">What We Do</p>
-    <h2 class="section-title">Programs That Change Lives</h2>
-    <div class="programs-grid">
-      <div class="program-card">
-        <div class="prog-icon">📚</div>
-        <h3 class="prog-title">Education Support</h3>
-        <p class="prog-desc">Tutoring, school supplies, and mentorship to keep children on track.</p>
-      </div>
-      <div class="program-card">
-        <div class="prog-icon">🍱</div>
-        <h3 class="prog-title">Nutrition Program</h3>
-        <p class="prog-desc">Daily healthy meals and nutritional education for all children.</p>
-      </div>
-      <div class="program-card">
-        <div class="prog-icon">🎨</div>
-        <h3 class="prog-title">Arts & Play</h3>
-        <p class="prog-desc">Creative workshops and play therapy to build confidence and joy.</p>
-      </div>
-      <div class="program-card">
-        <div class="prog-icon">❤️</div>
-        <h3 class="prog-title">Counselling</h3>
-        <p class="prog-desc">Psychosocial support for children navigating trauma and hardship.</p>
+  <section class="py-5" style="background:#FFF8EE;">
+    <div class="container">
+      <p class="text-uppercase fw-bold small mb-1" style="color:#2D7DD2; letter-spacing:0.1em;">What We Do</p>
+      <h2 class="fw-bold mb-4">Programs That Change Lives</h2>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
+            <div class="fs-1 mb-2">📚</div>
+            <h5 class="fw-bold">Education Support</h5>
+            <p class="text-secondary small">Tutoring, school supplies, and mentorship to keep children on track with their studies.</p>
+            <span class="badge rounded-pill mt-auto" style="background:#EBF5FF; color:#1A4F8A;">Learning</span>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
+            <div class="fs-1 mb-2">🍱</div>
+            <h5 class="fw-bold">Nutrition Program</h5>
+            <p class="text-secondary small">Daily healthy meals and nutritional education for all children in our care.</p>
+            <span class="badge rounded-pill mt-auto" style="background:#EAFAF1; color:#1F6840;">Wellness</span>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
+            <div class="fs-1 mb-2">🎨</div>
+            <h5 class="fw-bold">Arts & Play</h5>
+            <p class="text-secondary small">Creative workshops and play therapy to build confidence and joy.</p>
+            <span class="badge rounded-pill mt-auto" style="background:#FFF5E5; color:#C07A00;">Creativity</span>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
+            <div class="fs-1 mb-2">❤️</div>
+            <h5 class="fw-bold">Counselling</h5>
+            <p class="text-secondary small">Psychosocial support for children navigating trauma and hardship.</p>
+            <span class="badge rounded-pill mt-auto" style="background:#FFF0F0; color:#A32D2D;">Support</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>

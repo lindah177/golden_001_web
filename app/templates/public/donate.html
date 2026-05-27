@@ -3,26 +3,50 @@
 {% block title %}Donate — Golden Ark Care Centre{% endblock %}
 
 {% block content %}
-<section class="donate-section">
-  <div class="donate-inner">
-    <p class="section-label">Make an Impact</p>
-    <h2 class="section-title">Your Donation Changes Everything</h2>
-    <p>R50 feeds a child for a week. R200 covers a month of school supplies. Every rand makes a real difference.</p>
+<section class="py-5 text-white" style="background: linear-gradient(135deg, #1A3A5C, #0f3460);">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 text-center">
+        <p class="text-uppercase fw-bold small mb-1" style="color:#F5A623; letter-spacing:0.1em;">Make an Impact</p>
+        <h2 class="fw-bold mb-3">Your Donation Changes Everything</h2>
+        <p class="mb-4" style="opacity:0.75;">R50 feeds a child for a week. R200 covers a month of school supplies. Every rand makes a real difference.</p>
 
-    <div class="amount-grid">
-      <button class="amount-btn active" onclick="selectAmount(this, 50)">R50<small>Weekly meal</small></button>
-      <button class="amount-btn" onclick="selectAmount(this, 200)">R200<small>School supplies</small></button>
-      <button class="amount-btn" onclick="selectAmount(this, 500)">R500<small>Monthly care</small></button>
-      <button class="amount-btn" onclick="selectAmount(this, 1000)">R1000<small>Sponsor a child</small></button>
+        <!-- AMOUNT BUTTONS -->
+        <div class="row g-2 mb-3">
+          <div class="col-6 col-md-3">
+            <button class="btn w-100 fw-bold amount-btn active" onclick="selectAmount(this, 50)">
+              R50 <small class="d-block fw-normal opacity-75" style="font-size:0.7rem;">Weekly meal</small>
+            </button>
+          </div>
+          <div class="col-6 col-md-3">
+            <button class="btn w-100 fw-bold amount-btn" onclick="selectAmount(this, 200)">
+              R200 <small class="d-block fw-normal opacity-75" style="font-size:0.7rem;">School supplies</small>
+            </button>
+          </div>
+          <div class="col-6 col-md-3">
+            <button class="btn w-100 fw-bold amount-btn" onclick="selectAmount(this, 500)">
+              R500 <small class="d-block fw-normal opacity-75" style="font-size:0.7rem;">Monthly care</small>
+            </button>
+          </div>
+          <div class="col-6 col-md-3">
+            <button class="btn w-100 fw-bold amount-btn" onclick="selectAmount(this, 1000)">
+              R1000 <small class="d-block fw-normal opacity-75" style="font-size:0.7rem;">Sponsor a child</small>
+            </button>
+          </div>
+        </div>
+
+        <!-- CUSTOM AMOUNT -->
+        <div class="input-group mb-3">
+          <span class="input-group-text" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.25); color:#fff;">R</span>
+          <input type="number" id="donate-amount" class="form-control" placeholder="Or enter your own amount" value="50" min="1"
+                 style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.25); color:#fff;"/>
+          <button class="btn fw-bold" style="background:#F5A623;" onclick="handleDonate()">Donate 💛</button>
+        </div>
+
+        <p class="small" style="opacity:0.5;">🔒 Secure payment · 100% goes to the children · PBO registered</p>
+        <div id="donate-message" class="mt-3 fw-bold"></div>
+      </div>
     </div>
-
-    <div class="donate-input-wrap">
-      <input class="donate-input" type="number" id="donate-amount" placeholder="Or enter your amount (R)" value="50" min="1"/>
-      <button class="donate-submit" onclick="handleDonate()">Donate 💛</button>
-    </div>
-
-    <p class="secure-note">🔒 Secure payment · 100% goes to the children · PBO registered</p>
-    <div id="donate-message" style="margin-top: 1rem; font-weight: 600;"></div>
   </div>
 </section>
 {% endblock %}
