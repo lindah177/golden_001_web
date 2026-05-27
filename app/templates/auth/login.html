@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Login — Golden Ark Care Centre{% endblock %}
+
+{% block content %}
+<section class="contact">
+  <div class="contact-inner" style="max-width: 420px;">
+    <p class="section-label">Admin Access</p>
+    <h2 class="section-title">Login</h2>
+
+    <form class="contact-form" method="POST" action="{{ url_for('auth.login') }}">
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" required/>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" required/>
+      </div>
+      <button type="submit" class="form-submit">Login →</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

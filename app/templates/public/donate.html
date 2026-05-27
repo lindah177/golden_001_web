@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Donate — Golden Ark Care Centre{% endblock %}
+
+{% block content %}
+<section class="donate-section">
+  <div class="donate-inner">
+    <p class="section-label">Make an Impact</p>
+    <h2 class="section-title">Your Donation Changes Everything</h2>
+    <p>R50 feeds a child for a week. R200 covers a month of school supplies. Every rand makes a real difference.</p>
+
+    <div class="amount-grid">
+      <button class="amount-btn active" onclick="selectAmount(this, 50)">R50<small>Weekly meal</small></button>
+      <button class="amount-btn" onclick="selectAmount(this, 200)">R200<small>School supplies</small></button>
+      <button class="amount-btn" onclick="selectAmount(this, 500)">R500<small>Monthly care</small></button>
+      <button class="amount-btn" onclick="selectAmount(this, 1000)">R1000<small>Sponsor a child</small></button>
+    </div>
+
+    <div class="donate-input-wrap">
+      <input class="donate-input" type="number" id="donate-amount" placeholder="Or enter your amount (R)" value="50" min="1"/>
+      <button class="donate-submit" onclick="handleDonate()">Donate 💛</button>
+    </div>
+
+    <p class="secure-note">🔒 Secure payment · 100% goes to the children · PBO registered</p>
+    <div id="donate-message" style="margin-top: 1rem; font-weight: 600;"></div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/donate.js') }}"></script>
+{% endblock %}

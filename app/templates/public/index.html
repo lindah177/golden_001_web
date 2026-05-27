@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Home — Sunshine Children's Care Centre{% endblock %}
+
+{% block content %}
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge"> Making a Difference Since 2010</div>
+    <h1>Every Child Deserves a <em>Bright Future</em></h1>
+    <p>We nurture, protect, and empower children in our community — providing love, education, and opportunity to those who need it most.</p>
+    <div class="hero-btns">
+      <a href="{{ url_for('public.donate') }}" class="btn-primary">💛 Donate Today</a>
+      <a href="{{ url_for('public.contact') }}" class="btn-outline">Get In Touch</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stat">
+      <div class="stat-num">320+</div>
+      <div class="stat-label">Children Supported</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">14</div>
+      <div class="stat-label">Years of Service</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">R{{ "{:,.0f}".format(total_donations) }}</div>
+      <div class="stat-label">Total Donated</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="about-inner">
+      <div class="about-img">🏡</div>
+      <div>
+        <p class="section-label">Who We Are</p>
+        <h2 class="section-title">A Safe Haven for Children in Need</h2>
+        <p>Sunshine Children's Care Centre has been a beacon of hope since 2010. We provide a nurturing home, quality education, and emotional support to vulnerable children.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="programs">
+    <p class="section-label">What We Do</p>
+    <h2 class="section-title">Programs That Change Lives</h2>
+    <div class="programs-grid">
+      <div class="program-card">
+        <div class="prog-icon">📚</div>
+        <h3 class="prog-title">Education Support</h3>
+        <p class="prog-desc">Tutoring, school supplies, and mentorship to keep children on track.</p>
+      </div>
+      <div class="program-card">
+        <div class="prog-icon">🍱</div>
+        <h3 class="prog-title">Nutrition Program</h3>
+        <p class="prog-desc">Daily healthy meals and nutritional education for all children.</p>
+      </div>
+      <div class="program-card">
+        <div class="prog-icon">🎨</div>
+        <h3 class="prog-title">Arts & Play</h3>
+        <p class="prog-desc">Creative workshops and play therapy to build confidence and joy.</p>
+      </div>
+      <div class="program-card">
+        <div class="prog-icon">❤️</div>
+        <h3 class="prog-title">Counselling</h3>
+        <p class="prog-desc">Psychosocial support for children navigating trauma and hardship.</p>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

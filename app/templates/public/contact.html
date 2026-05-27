@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Contact — Golden Ark Care Centre{% endblock %}
+
+{% block content %}
+<section class="contact">
+  <div class="contact-inner">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Partner With Us</h2>
+    <p>Volunteer, partner, or simply say hello. We'd love to hear from you.</p>
+
+    <form class="contact-form" method="POST" action="{{ url_for('public.contact') }}">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="e.g. Thandi Mokoena" required/>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="you@example.com" required/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>How can you help?</label>
+        <select name="enquiry_type">
+          <option>I want to volunteer</option>
+          <option>I want to donate goods</option>
+          <option>I represent a company / sponsor</option>
+          <option>I have a general enquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea name="message" placeholder="Tell us more…" required></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Message →</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

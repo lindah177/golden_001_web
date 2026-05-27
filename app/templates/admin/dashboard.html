@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard — Golden Ark Care Centre{% endblock %}
+
+{% block content %}
+<section style="padding: 2rem;">
+  <h2 class="section-title">Admin Dashboard</h2>
+
+  <!-- SUMMARY CARDS -->
+  <div class="programs-grid" style="margin: 2rem 0;">
+    <div class="program-card">
+      <div class="prog-icon">💰</div>
+      <div class="prog-title">Total Donations</div>
+      <div style="font-size: 1.5rem; font-weight: 700;">R{{ "{:,.0f}".format(total_donations) }}</div>
+    </div>
+    <div class="program-card">
+      <div class="prog-icon">👧</div>
+      <div class="prog-title">Children in Care</div>
+      <div style="font-size: 1.5rem; font-weight: 700;">{{ child_count }}</div>
+    </div>
+    <div class="program-card">
+      <div class="prog-icon">✉️</div>
+      <div class="prog-title">Unread Messages</div>
+      <div style="font-size: 1.5rem; font-weight: 700;">{{ unread_messages }}</div>
+    </div>
+  </div>
+
+  <!-- RECENT DONATIONS -->
+  <h3 style="margin-bottom: 1rem;">Recent Donations</h3>
+  <table style="width: 100%; border-collapse: collapse;">
+    <thead>
+      <tr style="background: #f5f5f5;">
+        <th style="padding: 10px; text-align: left;">ID</th>
+        <th style="padding: 10px; text-align: left;">Amount</th>
+        <th style="padding: 10px; text-align: left;">Status</th>
+        <th style="padding: 10px; text-align: left;">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for donation in recent_donations %}
+      <tr style="border-bottom: 1px solid #eee;">
+        <td style="padding: 10px;">#{{ donation.id }}</td>
+        <td style="padding: 10px;">R{{ "{:,.2f}".format(donation.amount) }}</td>
+        <td style="padding: 10px;">{{ donation.status }}</td>
+        <td style="padding: 10px;">{{ donation.created_at.strftime("%d %b %Y") }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</section>
+{% endblock %}
