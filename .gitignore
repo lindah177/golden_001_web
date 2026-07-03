@@ -24,4 +24,3 @@ __pycache__/
 Thumbs.db
 
 # Migrations
-migrations/versions/

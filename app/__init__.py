@@ -3,10 +3,13 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_mail import Mail
 from config import config
+from flask_migrate import Migrate
 
 db = SQLAlchemy()
 login_manager = LoginManager()
 mail = Mail()
+migrate = Migrate(app, db)
+
 
 def create_app(config_name="default"):
     app = Flask(__name__)
