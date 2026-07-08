@@ -13,6 +13,7 @@
 
         <div class="card border-0 shadow-sm rounded-4 p-4">
           <form method="POST" action="{{ url_for('public.contact') }}">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
             <div class="row g-3 mb-3">
               <div class="col-md-6">
                 <label class="form-label fw-semibold small">Your Name</label>

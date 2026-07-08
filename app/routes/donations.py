@@ -1,9 +1,11 @@
 from flask import Blueprint, request, jsonify
+from app import csrf
 from app.services.donation_service import create_donation
 
 donations_bp = Blueprint("donations", __name__)
 
 @donations_bp.route("/create", methods=["POST"])
+@csrf.exempt  # Exempt this route from CSRF protection for API usage
 def donate():
     data = request.get_json()
     amount = data.get("amount")
