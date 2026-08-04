@@ -1,4 +1,4 @@
-# ☀️ Golden Ark Care Centre
+ # ☀️ Golden Ark Care Centre
 
 A full-stack web application built for **Golden Ark Care Centre**, a South African non-profit organisation (NPO) dedicated to nurturing and empowering vulnerable children.
 
